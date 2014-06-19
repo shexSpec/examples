@@ -4,6 +4,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix shex: <http://www.w3.org/2013/ShEx/ns#> .
 
 #:IssueShape {                    # An <IssueShape> has:
 # :state (:unassigned :assigned), # state which is
@@ -62,40 +63,51 @@ foaf:familyName a owl:FunctionalProperty .
   )
 ] .
 
+:UserShapeClass owl:equivalentClass [
+ a owl:Restriction ;
+ owl:onProperty shex:hasShape ;
+ owl:hasValue :UserShape  
+] .
+
 # Trying to express that one cannot have "name" and "givenName/familyName"
 # at the same time...with disjointClass is not ok
 # However, this is not what is intended...it generates an inconsistency if some
 # node has both...
-#[] rdf:type owl:AllDisjointClasses ;
-#    owl:members  ( :HasNameClass :HasGivenNameFamilyNameClass ) .
+[] rdf:type owl:AllDisjointClasses ;
+    owl:members  ( :HasNameClass :HasGivenNameFamilyNameClass ) .
 
 ##############
 # Data
 	
-:johnSmith foaf:givenName "john" ;
+:johnSmith :hasShape :UserShape ;
+           foaf:givenName "john" ;
            foaf:familyName "Smith" .
 		   
 :johnJohnnySmith 
+           :hasShape :UserShape ;
            foaf:givenName "John" ;
            foaf:givenName "Johnny" ;
            foaf:familyName "Smith" .
 		   
-:john foaf:givenName "john" .
+:john foaf:givenName "john" ;
+      :hasShape :UserShape .
 
-:mary foaf:name "Mary" .
+:mary foaf:name "Mary" ;
+      :hasShape :UserShape .
 
-# The system infers that :maryJohn has type :UserShape
-:maryJohn foaf:name "Mary" ;
-          foaf:givenName "Mar" ;
-		  foaf:familyName "Smith" .
+# The following element is not a user shape because 
+#  it has both name and (given/family) name
+#:maryJohn :hasShape :UserShape ;
+#          foaf:name "Mary" ;
+#          foaf:givenName "Mar" ; foaf:familyName "Smith" .
  
 
 # The following declaration generates an inconsistency
 # We have to remove it if we want to infer the shapes
-# :mary2 foaf:name "Mary1" , "Mary2" .
+# :mary2 :hasShape :UserShape ; foaf:name "Mary1" , "Mary2" .
 
 # The following does not generate an inconsistency although
 # the system does not infer that :john1, :john2 have type :UserShape
 # which is ok.
-:john1 foaf:givenName 1 ; foaf:familyName "Smith" .
-:john2 foaf:givenName "john"; foaf:familyName 2 .
+:john1 a :UserShape ; foaf:givenName 1 ; foaf:familyName "Smith" .
+:john2 a :UserShape ; foaf:givenName "john"; foaf:familyName 2 .
