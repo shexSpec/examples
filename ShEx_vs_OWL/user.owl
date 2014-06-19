@@ -1,0 +1,101 @@
+@prefix :     <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+#:IssueShape {                    # An <IssueShape> has:
+# :state (:unassigned :assigned), # state which is
+#                                 #   unassigned or assigned.
+# :reportedBy @:UserShape         # reported by a :UserShape.
+#}
+
+#:UserShape {                         # A :UserShape has:
+#    (                                # either
+#       foaf:name xsd:string          #   a FOAF name
+#     |                               #  or
+#       foaf:givenName xsd:string+,   #   one or more givenNames
+#       foaf:familyName xsd:string)   #   and one familyName.
+#}
+
+:HasNameClass owl:equivalentClass [
+ a owl:Class ;
+ owl:intersectionOf (
+  [ rdf:type owl:Restriction ;
+    owl:onProperty foaf:name ;
+    owl:someValuesFrom xsd:string ;
+  ] 
+  [ rdf:type owl:Restriction ;
+    owl:onProperty foaf:name ;
+    owl:cardinality 1
+  ] 
+ )
+] .
+
+:HasGivenNameFamilyNameClass owl:equivalentClass [
+ a owl:Class ;
+ owl:intersectionOf  
+    ( [ rdf:type            owl:Restriction ;
+        owl:onProperty      foaf:givenName ;
+        owl:someValuesFrom  xsd:string 
+      ] 
+	  [ rdf:type            owl:Restriction ;
+        owl:onProperty      foaf:familyName ;
+	    owl:someValuesFrom  xsd:string 
+      ] 
+	  [ rdf:type            owl:Restriction ;
+        owl:onProperty      foaf:familyName ;
+	    owl:cardinality     1
+      ] 
+	)
+] .
+
+foaf:name a owl:FunctionalProperty .
+foaf:familyName a owl:FunctionalProperty .		  
+
+:UserShapeClass owl:equivalentClass [
+ rdf:type owl:Class ;
+ owl:unionOf ( 
+   :HasNameClass
+   :HasGivenNameFamilyNameClass
+  )
+] .
+
+# Trying to express that one cannot have "name" and "givenName/familyName"
+# at the same time...with disjointClass is not ok
+# However, this is not what is intended...it generates an inconsistency if some
+# node has both...
+#[] rdf:type owl:AllDisjointClasses ;
+#    owl:members  ( :HasNameClass :HasGivenNameFamilyNameClass ) .
+
+##############
+# Data
+	
+:johnSmith foaf:givenName "john" ;
+           foaf:familyName "Smith" .
+		   
+:johnJohnnySmith 
+           foaf:givenName "John" ;
+           foaf:givenName "Johnny" ;
+           foaf:familyName "Smith" .
+		   
+:john foaf:givenName "john" .
+
+:mary foaf:name "Mary" .
+
+# The system infers that :maryJohn has type :UserShape
+:maryJohn foaf:name "Mary" ;
+          foaf:givenName "Mar" ;
+		  foaf:familyName "Smith" .
+ 
+
+# The following declaration generates an inconsistency
+# We have to remove it if we want to infer the shapes
+# :mary2 foaf:name "Mary1" , "Mary2" .
+
+# The following does not generate an inconsistency although
+# the system does not infer that :john1, :john2 have type :UserShape
+# which is ok.
+:john1 foaf:givenName 1 ; foaf:familyName "Smith" .
+:john2 foaf:givenName "john"; foaf:familyName 2 .
