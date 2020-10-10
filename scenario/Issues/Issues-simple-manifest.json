@@ -1,0 +1,10 @@
+[
+  {
+    "schemaLabel": "simple closed issue",
+    "schemaURL": "Issues-simple-closed.shex",
+    "dataLabel": "different reportedBy and reproducedBy",
+    "dataURL": "Issues-simple-1.ttl",
+    "queryMap": "<http://a.example/Issue1>@<http://a.example/IssueShape>",
+    "status": "conformant"
+  }
+]

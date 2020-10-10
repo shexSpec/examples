@@ -1,0 +1,32 @@
+{
+  "name": "@shexjs/examples",
+  "version": "1.0.0",
+  "description": "Shape Expressions example schemas",
+  "author": {
+    "name": "Eric Prud'hommeaux",
+    "email": "eric@w3.org",
+    "url": "http://www.w3.org/People/Eric/"
+  },
+  "keywords": [
+    "shex",
+    "shape expressions",
+    "rdf",
+    "query"
+  ],
+  "license": "MIT",
+  "main": "./shex-examples.js",
+  "dependencies": {},
+  "scripts": {
+    "test": "echo This repo has no tests but you can test it with e.g. @shexjs/cli and @shexjs/webapp"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shexSpec/shex.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shexSpec/shex.js/issues"
+  }
+}
