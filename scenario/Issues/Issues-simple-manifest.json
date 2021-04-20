@@ -2,8 +2,16 @@
   {
     "schemaLabel": "simple closed issue",
     "schemaURL": "Issues-simple-closed.shex",
-    "dataLabel": "different reportedBy and reproducedBy",
-    "dataURL": "Issues-simple-1.ttl",
+    "dataLabel": "different reportedBy and reproducedBy with 2 names",
+    "dataURL": "Issues-simple-2-names.ttl",
+    "queryMap": "<http://a.example/Issue1>@<http://a.example/IssueShape>",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "simple closed issue",
+    "schemaURL": "Issues-simple-closed.shex",
+    "dataLabel": "different reportedBy and reproducedBy with 1 name",
+    "dataURL": "Issues-simple-1-name.ttl",
     "queryMap": "<http://a.example/Issue1>@<http://a.example/IssueShape>",
     "status": "conformant"
   }

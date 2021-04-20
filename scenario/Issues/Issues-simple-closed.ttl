@@ -1,0 +1,105 @@
+PREFIX shex: <http://www.w3.org/ns/shex#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+[]
+  a shex:Schema ;
+  shex:shapes <http://a.example/IssueShape>, <http://a.example/UserShape>, <http://a.example/EmployeeShape> .
+
+<http://a.example/IssueShape>
+  a shex:Shape ;
+  shex:closed true ;
+  shex:expression [
+    a shex:EachOf ;
+    shex:expressions (
+      [ a shex:TripleConstraint ;
+        shex:predicate <http://ex.example/#reportedBy> ;
+        shex:valueExpr [
+          a shex:ShapeOr ;
+          shex:shapeExprs (
+           <http://a.example/UserShape>
+           <http://a.example/EmployeeShape>
+         )
+      ] ]
+      [ a shex:TripleConstraint ;
+        shex:max 1 ;
+        shex:min 0 ;
+        shex:predicate <http://ex.example/#reproducedBy> ;
+        shex:valueExpr <http://a.example/EmployeeShape>
+      ]
+    )
+  ] .
+
+<http://a.example/UserShape>
+  a shex:Shape ;
+  shex:closed true ;
+  shex:expression [
+    a shex:EachOf ;
+    shex:expressions (
+      [ a shex:TripleConstraint ;
+        shex:predicate <http://xmlns.com/foaf/name> ;
+        shex:valueExpr [
+          a shex:NodeConstraint ;
+          shex:datatype xsd:string
+      ] ]
+      [ a shex:TripleConstraint ;
+        shex:predicate <http://xmlns.com/foaf/mbox> ;
+        shex:valueExpr [
+          a shex:NodeConstraint ;
+          shex:nodeKind shex:iri
+      ] ]
+      [ a shex:TripleConstraint ;
+        shex:predicate <http://ex.example/#representative> ;
+        shex:valueExpr <http://a.example/EmployeeShape>
+      ]
+    )
+  ] .
+
+<http://a.example/EmployeeShape>
+  a <http://www.w3.org/ns/shex#Shape> ;
+  shex:closed true ;
+  shex:expression [
+    a shex:EachOf ;
+    shex:expressions (
+      [ a shex:OneOf ;
+        shex:expressions (
+          [ a shex:TripleConstraint ;
+            shex:predicate <http://xmlns.com/foaf/name> ;
+            shex:valueExpr [
+              a shex:NodeConstraint ;
+              shex:datatype xsd:string
+          ] ]
+          [ a shex:EachOf ;
+            shex:expressions (
+             [ a shex:TripleConstraint ;
+               shex:max -1 ;
+               shex:min 1 ;
+               shex:predicate <http://xmlns.com/foaf/givenName> ;
+               shex:valueExpr [
+                 a shex:NodeConstraint ;
+                 shex:datatype xsd:string
+             ] ]
+             [ a shex:TripleConstraint ;
+               shex:predicate <http://xmlns.com/foaf/familyName> ;
+               shex:valueExpr [
+                 a shex:NodeConstraint ;
+                 shex:datatype xsd:string
+             ] ]
+          ) ]
+      ) ]
+      [  a shex:TripleConstraint ;
+        shex:predicate <http://xmlns.com/foaf/mbox> ;
+        shex:valueExpr [
+          a shex:NodeConstraint ;
+          shex:nodeKind shex:iri
+      ] ]
+      [ a shex:TripleConstraint ;
+        shex:max -1 ;
+        shex:min 1 ;
+        shex:predicate <http://xmlns.com/foaf/phone> ;
+        shex:valueExpr [
+          a shex:NodeConstraint ;
+          shex:nodeKind shex:iri
+      ] ]
+    )
+  ] .

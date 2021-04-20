@@ -1,0 +1,19 @@
+PREFIX ex: <http://ex.example/#>
+PREFIX foaf: <http://xmlns.com/foaf/>
+
+<http://a.example/Issue1>
+    ex:reportedBy   <http://a.example/User2> ;
+    ex:reproducedBy <http://a.example/Thompson.J> ;
+.
+
+<http://a.example/User2>
+    foaf:name "Bob Smith" ;
+    foaf:mbox <mail:bob@example.org> ;
+    ex:representative <http://a.example/Thompson.J>
+.
+
+<http://a.example/Thompson.J>
+    foaf:name "Joe Thompson" ;
+    foaf:phone <tel:+456> ;
+    foaf:mbox <mail:joe@example.org>
+.
