@@ -1,0 +1,11 @@
+PREFIX : <http://a.example/ns#>
+PREFIX schema: <http://schema.org/>
+
+:Person { 
+   $:name ( schema:name . 
+          | schema:givenName . ; schema:familyName .
+          ) ;
+   schema:email .               
+}
+
+# This schema could also have a :User shape...

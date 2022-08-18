@@ -1,0 +1,18 @@
+PREFIX bf: <http://bibframe.org/vocab/>
+
+<Work> EXTRA a {
+  a [bf:Work] ;
+  bf:class @<Classification> ;
+  bf:creator @<Person> ;
+}
+
+<Classification> [<http://id.loc.gov/authorities/classification/>~] AND {
+  a [bf:LCC] ;
+  bf:label LITERAL
+}
+
+<Person> {
+  a [bf:Person] ;
+  bf:label LITERAL ;
+}
+

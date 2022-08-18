@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <bf:Work xmlns:bf="http://bibframe.org/vocab/"
+            rdf:about="http://id/test/C:\Users\deborah\Documents\OxygenXMLDeveloper\samples9298996">
+      <rdf:type rdf:resource="http://bibframe.org/vocab/Text"/>
+      <bf:uniformTitle>Oliver Twist.</bf:uniformTitle>
+      <rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">Oliver Twist.</rdfs:label>
+      <madsrdf:elementList xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" rdf:parseType="Collection">
+         <madsrdf:MainTitleElement>
+            <madsrdf:elementValue>Oliver Twist.</madsrdf:elementValue>
+         </madsrdf:MainTitleElement>
+      </madsrdf:elementList>
+      <bf:title>The adventures of Oliver Twist</bf:title>
+      <madsrdf:authoritativeLabel xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#">Dickens, Charles, 1812-1870. Oliver Twist</madsrdf:authoritativeLabel>
+      <bf:creator>
+         <bf:Person>
+            <bf:label>Dickens, Charles, 1812-1870.</bf:label>
+            <rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">Dickens, Charles, 1812-1870.</rdfs:label>
+            <madsrdf:elementList xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" rdf:parseType="Collection">
+               <madsrdf:NameElement>
+                  <madsrdf:elementValue>Dickens, Charles,</madsrdf:elementValue>
+               </madsrdf:NameElement>
+               <madsrdf:DateNameElement>
+                  <madsrdf:elementValue>1812-1870.</madsrdf:elementValue>
+               </madsrdf:DateNameElement>
+            </madsrdf:elementList>
+         </bf:Person>
+      </bf:creator>
+      <bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/eng"/>
+      <bf:subject>
+         <bf:Topic>
+            <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
+            <bf:label>Orphans--Fiction</bf:label>
+            <madsrdf:authoritativeLabel xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" xml:lang="en">Orphans--Fiction</madsrdf:authoritativeLabel>
+            <madsrdf:componentList xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" rdf:parseType="Collection">
+               <madsrdf:Topic>
+                  <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
+                  <madsrdf:authoritativeLabel xml:lang="en">Orphans</madsrdf:authoritativeLabel>
+                  <madsrdf:elementList rdf:parseType="Collection">
+                     <madsrdf:TopicElement>
+                        <madsrdf:elementValue xml:lang="en">Orphans</madsrdf:elementValue>
+                     </madsrdf:TopicElement>
+                  </madsrdf:elementList>
+               </madsrdf:Topic>
+               <madsrdf:Topic>
+                  <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
+                  <madsrdf:authoritativeLabel xml:lang="en">Fiction</madsrdf:authoritativeLabel>
+                  <madsrdf:elementList rdf:parseType="Collection">
+                     <madsrdf:TopicElement>
+                        <madsrdf:elementValue xml:lang="en">Fiction.</madsrdf:elementValue>
+                     </madsrdf:TopicElement>
+                  </madsrdf:elementList>
+               </madsrdf:Topic>
+            </madsrdf:componentList>
+         </bf:Topic>
+      </bf:subject>
+      <bf:subject>
+         <bf:Topic>
+            <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
+            <bf:label>Criminals--Fiction</bf:label>
+            <madsrdf:authoritativeLabel xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" xml:lang="en">Criminals--Fiction</madsrdf:authoritativeLabel>
+            <madsrdf:componentList xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" rdf:parseType="Collection">
+               <madsrdf:Topic>
+                  <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
+                  <madsrdf:authoritativeLabel xml:lang="en">Criminals</madsrdf:authoritativeLabel>
+                  <madsrdf:elementList rdf:parseType="Collection">
+                     <madsrdf:TopicElement>
+                        <madsrdf:elementValue xml:lang="en">Criminals</madsrdf:elementValue>
+                     </madsrdf:TopicElement>
+                  </madsrdf:elementList>
+               </madsrdf:Topic>
+               <madsrdf:Topic>
+                  <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
+                  <madsrdf:authoritativeLabel xml:lang="en">Fiction</madsrdf:authoritativeLabel>
+                  <madsrdf:elementList rdf:parseType="Collection">
+                     <madsrdf:TopicElement>
+                        <madsrdf:elementValue xml:lang="en">Fiction.</madsrdf:elementValue>
+                     </madsrdf:TopicElement>
+                  </madsrdf:elementList>
+               </madsrdf:Topic>
+            </madsrdf:componentList>
+         </bf:Topic>
+      </bf:subject>
+      <bf:subject>
+         <bf:Place>
+            <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject"/>
+            <bf:label>London (England)--Fiction</bf:label>
+            <madsrdf:authoritativeLabel xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" xml:lang="en">London (England)--Fiction</madsrdf:authoritativeLabel>
+            <madsrdf:componentList xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" rdf:parseType="Collection">
+               <madsrdf:Geographic>
+                  <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
+                  <madsrdf:authoritativeLabel xml:lang="en">London (England)</madsrdf:authoritativeLabel>
+                  <madsrdf:elementList rdf:parseType="Collection">
+                     <madsrdf:GeographicElement>
+                        <madsrdf:elementValue xml:lang="en">London (England)</madsrdf:elementValue>
+                     </madsrdf:GeographicElement>
+                  </madsrdf:elementList>
+               </madsrdf:Geographic>
+               <madsrdf:Topic>
+                  <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#Authority"/>
+                  <madsrdf:authoritativeLabel xml:lang="en">Fiction</madsrdf:authoritativeLabel>
+                  <madsrdf:elementList rdf:parseType="Collection">
+                     <madsrdf:TopicElement>
+                        <madsrdf:elementValue xml:lang="en">Fiction.</madsrdf:elementValue>
+                     </madsrdf:TopicElement>
+                  </madsrdf:elementList>
+               </madsrdf:Topic>
+            </madsrdf:componentList>
+         </bf:Place>
+      </bf:subject>
+      <bf:subject>
+         <bf:Genre>
+            <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
+            <bf:label>Bildungsromans</bf:label>
+            <madsrdf:authoritativeLabel xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" xml:lang="en">Bildungsromans</madsrdf:authoritativeLabel>
+            <madsrdf:elementList xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" rdf:parseType="Collection">
+               <madsrdf:GenreFormElement>
+                  <madsrdf:elementValue xml:lang="en">Bildungsromans.</madsrdf:elementValue>
+               </madsrdf:GenreFormElement>
+            </madsrdf:elementList>
+         </bf:Genre>
+      </bf:subject>
+      <bf:class>
+         <bf:LCC rdf:about="http://id.loc.gov/authorities/classification/PZ3">
+            <bf:label>PZ3.D55O165PR4567</bf:label>
+         </bf:LCC>
+      </bf:class>
+      <identifiers:lccn xmlns:identifiers="http://id.loc.gov/vocabulary/identifiers/">50005760</identifiers:lccn>
+      <bf:hasRelationship>
+         <bf:Work>
+            <bf:title>Oliver Twist.</bf:title>
+            <bf:contributor>
+               <bf:name>
+                  <bf:label>Oliver Twist.</bf:label>
+                  <rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">Oliver Twist.</rdfs:label>
+                  <madsrdf:elementList xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" rdf:parseType="Collection">
+                     <madsrdf:NameElement>
+                        <madsrdf:elementValue>Oliver Twist.</madsrdf:elementValue>
+                     </madsrdf:NameElement>
+                  </madsrdf:elementList>
+               </bf:name>
+            </bf:contributor>
+         </bf:Work>
+      </bf:hasRelationship>
+      <madsrdf:isMemberOfMADSScheme xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#"
+                                    rdf:resource="http://id.loc.gov/resources/works"/>
+      <bf:derivedFrom rdf:resource="http://id.loc.gov/resources/bibs/9298996"/>
+   </bf:Work>
+   <bf:Instance xmlns:bf="http://bibframe.org/vocab/">
+      <bf:title>The adventures of Oliver Twist</bf:title>
+      <bf:contributor>
+         <bf:Person>
+            <bf:label>Greenawalt, Lambert, 1890- [from old catalog]</bf:label>
+            <rdfs:label xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">Greenawalt, Lambert, 1890- [from old catalog]</rdfs:label>
+            <madsrdf:elementList xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" rdf:parseType="Collection">
+               <madsrdf:NameElement>
+                  <madsrdf:elementValue>Greenawalt, Lambert,</madsrdf:elementValue>
+               </madsrdf:NameElement>
+               <madsrdf:DateNameElement>
+                  <madsrdf:elementValue>1890- [from old catalog]</madsrdf:elementValue>
+               </madsrdf:DateNameElement>
+            </madsrdf:elementList>
+         </bf:Person>
+      </bf:contributor>
+      <bf:provider>
+         <bf:Organization>
+            <bf:label>Globe Book Co.</bf:label>
+         </bf:Organization>
+      </bf:provider>
+      <bf:placePub>
+         <bf:Place>
+            <bf:label>New York</bf:label>
+         </bf:Place>
+      </bf:placePub>
+      <bf:pubDate>c1949</bf:pubDate>
+      <bf:callNumber>PZ3.D55O165PR4567</bf:callNumber>
+      <identifiers:lccn xmlns:identifiers="http://id.loc.gov/vocabulary/identifiers/">50005760</identifiers:lccn>
+      <bf:extent>p. cm.</bf:extent>
+      <bf:instanceOf rdf:resource="http://id/test/C:\Users\deborah\Documents\OxygenXMLDeveloper\samples9298996"/>
+      <bf:derivedFrom rdf:resource="http://id.loc.gov/resources/bibs/9298996"/>
+   </bf:Instance>
+</rdf:RDF>

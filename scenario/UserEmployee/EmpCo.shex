@@ -1,0 +1,14 @@
+PREFIX : <http://a.example/ns#>
+PREFIX schema: <http://schema.org/>
+IMPORT <User.shex>
+
+
+:Employee {
+  &:name ;
+  schema:worksFor @:Company
+}
+ 
+:Company {
+  schema:employee @:Employee ;
+  schema:founder  @:Person ;
+} 

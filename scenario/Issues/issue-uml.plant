@@ -1,0 +1,47 @@
+@startuml
+
+class IssueShape {
+  + name String
+  + description String [0..1]
+  + address Address [0..1]
+  + reproducedBy EmployeeShape [0..1]
+}
+IssueShape "0..1" o-- "0..*" EmployeeShape : reproducedBy >
+
+abstract class PersonShape {
+  + name String
+  + mbox URL
+}
+class UserShape {
+  + givenName String
+  + familyName String
+}
+UserShape "1" o-- "0..*" EmployeeShape : representative >
+UserShape <|-- PersonShape
+abstract class RepShape {
+  + phone URL +
+}
+class EmployeeShape {
+  + employeeID Integer
+  + department Department
+  + address Address [0..1]
+}
+EmployeeShape <|-- PersonShape
+EmployeeShape <|-- RepShape
+
+class Address {
+  + streetNumber String [0..1]
+  + streetName String [0..1]
+  + city String
+  + zipcode String [0..1]
+}
+note bottom of Address: PlantUML doesnt support datatypes?
+
+enum Department {
+  UserInterface
+  Architecture
+  QualityAssurance
+  Services
+}
+
+@enduml

@@ -1,0 +1,58 @@
+[
+  {
+    "schemaLabel": "IMPORT User",
+    "schemaURL": "EmpCo.shex",
+    "dataLabel": "simple",
+    "dataURL": "UserEmpCo-data1.ttl",
+    "queryMap": "{FOCUS schema:worksFor _}@:Employee",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "IMPORT User",
+    "schemaURL": "EmpCo.shex",
+    "dataLabel": "no-founder",
+    "dataURL": "UserEmpCo-data2-no-founder.ttl",
+    "queryMap": "{FOCUS schema:worksFor _}@:Employee",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "IMPORT User",
+    "schemaURL": "EmpCo.shex",
+    "dataLabel" : "no-employee",
+    "dataURL": "UserEmpCo-data3-no-employee.ttl",
+    "queryMap": "{FOCUS schema:worksFor _}@:Employee",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "circular IMPORT",
+    "schemaURL": "EmpCo.shex",
+    "dataLabel": "circular simple",
+    "dataURL": "UserEmpCo-data1.ttl",
+    "queryMap": "{FOCUS schema:worksFor _}@:Employee",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "circular IMPORT",
+    "schemaURL": "EmpCo.shex",
+    "dataLabel": "circular no referent",
+    "dataURL": "UserEmpCo-data2-no-founder.ttl",
+    "queryMap": "{FOCUS schema:worksFor _}@:Employee",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "circular IMPORT",
+    "schemaURL": "EmpCo.shex",
+    "dataLabel": "circular 2nd referent",
+    "dataURL": "UserEmpCo-data3-no-employee.ttl",
+    "queryMap": "{FOCUS schema:worksFor _}@:Employee",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "circular IMPORT",
+    "schemaURL": "EmpCo.shex",
+    "dataLabel": "circular 3rd referent",
+    "dataURL": "UserEmpCo-data3-no-employee.ttl",
+    "queryMap": "{FOCUS schema:worksFor _}@:Employee",
+    "status": "nonconformant"
+  }
+]

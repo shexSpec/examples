@@ -1,6 +1,6 @@
 {
-  "name": "@shexjs/examples",
-  "version": "1.0.0",
+  "name": "shex-examples",
+  "version": "0.1.0",
   "description": "Shape Expressions example schemas",
   "author": {
     "name": "Eric Prud'hommeaux",

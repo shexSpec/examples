@@ -1,0 +1,74 @@
+[
+  {
+    "schemaLabel": "bibframe book",
+    "schemaURL": "book.shex",
+    "dataLabel": "simple",
+    "dataURL": "book.ttl",
+    "queryMap": "<samples9298996>@<Work>",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "bibframe book",
+    "schemaURL": "book.shex",
+    "dataLabel": "no bf:label",
+    "dataURL": "book-no-bf-label.ttl",
+    "queryMap": "<samples9298996>@<Work>",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "bibframe book",
+    "schemaURL": "book.shex",
+    "dataLabel": "value set violation",
+    "dataURL": "book-value-set-violation.ttl",
+    "queryMap": "<samples9298996>@<Work>",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "reduced bibframe book",
+    "schemaURL": "book-small.shex",
+    "dataLabel": "simple",
+    "dataURL": "book-small.ttl",
+    "queryMap": "<samples9298996>@<Work>",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "reduced bibframe book",
+    "schemaURL": "book-small.shex",
+    "dataLabel": "no bf:label",
+    "dataURL": "book-small-no-bf-label.ttl",
+    "queryMap": "<samples9298996>@<Work>",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "reduced bibframe book",
+    "schemaURL": "book-small.shex",
+    "dataLabel": "value set violation",
+    "dataURL": "book-small-value-set-violation.ttl",
+    "queryMap": "<samples9298996>@<Work>",
+    "status": "nonconformant"
+  },
+  {
+    "schemaLabel": "1 page bibframe book",
+    "schemaURL": "book-1page.shex",
+    "dataLabel": "3 books",
+    "dataURL": "book-1page.ttl",
+    "queryMap": "<book123>@<Work>,\n<book456>@<Work>,\n<book789>@<Work>",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "1 page bibframe book",
+    "schemaURL": "book-1page.shex",
+    "dataLabel": "3 books, triple pattern",
+    "dataURL": "book-1page.ttl",
+    "queryMap": "{FOCUS bf:creator _}@<Work>",
+    "status": "conformant"
+  },
+  {
+    "schemaLabel": "bibframe book opt bf:label",
+    "schemaURL": "book-opt-bf-label.shex",
+    "dataLabel": "no bf:label",
+    "dataURL": "book-no-bf-label.ttl",
+    "queryMap": "<samples9298996>@<Work>",
+    "status": "conformant"
+  }
+]

@@ -1,0 +1,41 @@
+/**
+ * @schema: vitals-RESTRICTS.shex
+ */
+
+PREFIX : <http://hl7.org/ns/fhir>
+PREFIX fhir: <http://hl7.org/ns/fhir#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<#obs0> // @<#Observation>
+  fhir:code "0"
+.
+
+<#obs1> // @<#Observation>
+  fhir:code "1" ;
+  fhir:component
+    [ fhir:code "1a" ; fhir:value "1av" ]
+.
+  
+<#BP1> // @<#Observation>, @<#BP>
+  fhir:code "bp" ;
+  fhir:component
+    [ fhir:code "systolic" ; fhir:value "110"^^ucum:mmHg ],
+    [ fhir:code "diastolic" ; fhir:value "80"^^ucum:mmHg ]
+.
+
+<#sitBP> // @<#Observation>, @<#BP>, @<#Postur>, @<#PosturBP>
+  fhir:code "bp" ;
+  fhir:component
+    [ fhir:code "systolic"  ; fhir:value "110"^^ucum:mmHg ],
+    [ fhir:code "diastolic" ; fhir:value "80"^^ucum:mmHg  ],
+    [ fhir:code "posture"   ; "seated"                    ]
+.
+
+<#lieBP> // @<#Observation>, @<#BP>, @<#Postur>, @<#PosturBP>, @<#Reclined>
+  fhir:code "bp" ;
+  fhir:component
+    [ fhir:code "systolic"  ; fhir:value "110"^^ucum:mmHg ],
+    [ fhir:code "diastolic" ; fhir:value "80"^^ucum:mmHg  ],
+    [ fhir:code "posture"   ; "reclined"                  ]
+.
+

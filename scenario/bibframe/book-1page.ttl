@@ -1,0 +1,25 @@
+PREFIX bf: <http://bibframe.org/vocab/>
+
+<book123> a bf:Text, bf:Work ;
+  bf:class <http://id.loc.gov/authorities/classification/PZ3> ;
+  bf:creator [
+    a bf:Person ;
+    bf:label "Dickens, Charles, 1812-1870."
+  ] .
+
+<book456> a bf:Text, bf:Play ;
+  bf:class <http://id.loc.gov/authorities/classification/PZ3> ;
+  bf:creator [
+    a bf:Person ;
+    bf:label "Dickens, Charles, 1812-1870."
+  ] .
+
+<book789> a bf:Text, bf:Work ;
+  bf:class <http://id.loc.gov/authorities/classification/PZ3> ;
+  bf:creator [
+    a bf:Place ;
+    bf:label "Dickens, Charles, 1812-1870."
+  ] .
+
+<http://id.loc.gov/authorities/classification/PZ3> a bf:LCC ;
+  bf:label "PZ3.D55O165PR4567" .

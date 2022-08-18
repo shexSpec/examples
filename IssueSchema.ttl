@@ -1,0 +1,144 @@
+# IssueSchema.shex - Simple issue schema in Turtle
+
+PREFIX ex: <http://ex.example/ns#>
+PREFIX foaf: <http://xmlns.com/foaf/>
+PREFIX shex: <http://www.w3.org/ns/shex#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+[]
+  a shex:Schema ;
+  shex:start <#IssueShape> ;
+  shex:shapes (
+    <#IssueShape>
+    <#UserShape>
+    <#EmployeeShape>
+  ) .
+
+<#IssueShape>
+  a shex:Shape ;
+  shex:expression [
+    a shex:EachOf ;
+    shex:expressions (
+      [ a shex:TripleConstraint ;
+        shex:predicate ex:state ;
+        shex:valueExpr [
+          a shex:NodeConstraint ;
+          shex:values (
+            ex:unassigned
+            ex:assigned
+         )
+      ] ]
+      [ a shex:TripleConstraint ;
+        shex:predicate ex:reportedBy ;
+        shex:valueExpr <#UserShape>
+      ]
+      [ a shex:TripleConstraint ;
+        shex:predicate ex:reportedOn ;
+        shex:valueExpr [
+          a shex:NodeConstraint ;
+          shex:datatype xsd:dateTime
+      ] ]
+      [
+        a shex:EachOf ;
+        shex:expressions (
+          [ a shex:TripleConstraint ;
+            shex:predicate ex:reproducedBy ;
+            shex:valueExpr <#EmployeeShape>
+          ]
+          [ a shex:TripleConstraint ;
+            shex:predicate ex:reproducedOn ;
+            shex:valueExpr [
+              a shex:NodeConstraint ;
+              shex:datatype xsd:dateTime
+          ] ]
+        ) ;
+        shex:min 0 ; shex:max 1
+      ]
+      [ a shex:TripleConstraint ;
+        shex:predicate ex:related ;
+        shex:min 0 ; shex:max -1 ;
+        shex:valueExpr <#IssueShape>
+      ]
+    )
+  ] .
+
+<#UserShape>
+  a shex:Shape ;
+  shex:expression [
+    a shex:EachOf ;
+    shex:expressions (
+      [ a shex:OneOf ;
+        shex:expressions (
+          [ a shex:TripleConstraint ;
+            shex:predicate foaf:name ;
+            shex:valueExpr [
+              a shex:NodeConstraint ;
+              shex:datatype xsd:string
+          ] ]
+          [ a shex:EachOf ;
+            shex:expressions (
+             [ a shex:TripleConstraint ;
+               shex:max -1 ;
+               shex:min 1 ;
+               shex:predicate foaf:givenName ;
+               shex:valueExpr [
+                 a shex:NodeConstraint ;
+                 shex:datatype xsd:string
+             ] ]
+             [ a shex:TripleConstraint ;
+               shex:predicate foaf:familyName ;
+               shex:valueExpr [
+                 a shex:NodeConstraint ;
+                 shex:datatype xsd:string
+             ] ]
+          ) ]
+      ) ]
+      [  a shex:TripleConstraint ;
+        shex:predicate foaf:mbox ;
+        shex:valueExpr [
+          a shex:NodeConstraint ;
+          shex:nodeKind shex:iri
+      ] ]
+    )
+  ] .
+
+<#EmployeeShape>
+  a shex:Shape ;
+  shex:expression [
+    a shex:EachOf ;
+    shex:expressions (
+      [ a shex:TripleConstraint ;
+        shex:predicate foaf:givenName ;
+        shex:min 1 ; shex:max -1 ;
+        shex:valueExpr [
+          a shex:NodeConstraint ;
+          shex:datatype xsd:string
+      ] ]
+      [ a shex:TripleConstraint ;
+        shex:predicate foaf:familyName ;
+        shex:valueExpr [
+          a shex:NodeConstraint ;
+          shex:datatype xsd:string
+      ] ]
+#       [ a shex:TripleConstraint ;
+#         shex:predicate ex:representative ;
+#         shex:valueExpr <#EmployeeShape>
+#       ]
+      [ a shex:TripleConstraint ;
+        shex:min 0 ;
+        shex:max -1 ;
+        shex:predicate foaf:phone ;
+        shex:valueExpr [
+          a shex:NodeConstraint ;
+          shex:nodeKind shex:iri
+      ] ]
+      [ a shex:TripleConstraint ;
+        shex:predicate foaf:mbox ;
+        shex:valueExpr [
+          a shex:NodeConstraint ;
+          shex:nodeKind shex:iri
+      ] ]
+    )
+  ] .
+

@@ -1,0 +1,47 @@
+{
+  "type": "Schema",
+  "shapes": [
+    {
+      "id": "https://shex.io/examples/import/UserSchema#UserShape",
+      "type": "Shape",
+      "expression": {
+        "type": "EachOf",
+        "expressions": [
+          {
+            "id": "https://shex.io/examples/import/UserSchema#entity",
+            "type": "EachOf",
+            "expressions": [
+              {
+                "type": "TripleConstraint",
+                "predicate": "http://xmlns.com/foaf/0.1/name",
+                "valueExpr": {
+                  "type": "NodeConstraint",
+                  "nodeKind": "literal"
+                }
+              },
+              {
+                "type": "TripleConstraint",
+                "predicate": "http://xmlns.com/foaf/0.1/mbox",
+                "valueExpr": {
+                  "type": "NodeConstraint",
+                  "nodeKind": "iri"
+                },
+                "min": 1,
+                "max": -1
+              }
+            ]
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://ex.example/#userID",
+            "valueExpr": {
+              "type": "NodeConstraint",
+              "nodeKind": "literal"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "@context": "http://www.w3.org/ns/shex.jsonld"
+}
